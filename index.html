@@ -30,6 +30,7 @@
 	</div>
 	
 	<script type="text/javascript">
+		var audio = new Audio("img/tjy0s-9zgui-1-2.mp3");
 		mui('#picklesImg')[0].addEventListener('click',function(){
 			var x = mui('#picklesImg')[0];
 			x.style.transform = 'scale(0.9)';
@@ -42,7 +43,6 @@
 			var x = mui('#picklesImg')[0];
 			var y = document.getElementsByClassName("newPickles");
 			var i;
-			var audio = new Audio("img/tjy0s-9zgui-1-2.mp3");
 			for (i = 0; i < y.length; i++) {
 				audio.play();
 			    y[i].style.transform = 'scale(1.4)';
