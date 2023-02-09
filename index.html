@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Pikles!</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+	<style type="text/css">
+		#picklesImg{
+			width: 25vw;
+			height: 25vw;
+			left: 35vw;
+			top: 25vh;
+			position: absolute;
+			transition: 0.1s;
+			z-index: 999;
+		}
+		html,body{
+			overflow:hidden;
+		}
+	</style>
+</head>
+<body style="background-color: #fffae8;">
+	<div id="Pickless">
+		<img src="img/pickles.png" id="picklesImg">
+	</div>
+	
+	<script type="text/javascript">
+		mui('#picklesImg')[0].addEventListener('click',function(){
+			var x = mui('#picklesImg')[0];
+			x.style.transform = 'scale(0.9)';
+			setTimeout(function(){x.style.transform = 'scale(1)'}, 100);
+			addPickle()
+			newPickles()
+		})
+		
+		mui('#Pickless').on('tap','.newPickles',function(){
+			var x = mui('#picklesImg')[0];
+			var y = document.getElementsByClassName("newPickles");
+			var i;
+			var audio = new Audio("img/tjy0s-9zgui-1-2.mp3");
+			for (i = 0; i < y.length; i++) {
+				audio.play();
+			    y[i].style.transform = 'scale(1.4)';
+				setTimeout(function(){
+					var y = document.getElementsByClassName("newPickles");
+					var i;
+					for (i = 0; i < y.length; i++) {
+					    y[i].style.transform = 'scale(1.2)';
+					}
+				}, 200);
+			}
+		})
+		
+		function newPickles(){
+			var x = mui('#picklesImg')[0];
+			var y = document.getElementsByClassName("newPickles");
+			var i;
+			var audio = new Audio("img/tjy0s-9zgui-1-2.mp3");
+			for (i = 0; i < y.length; i++) {
+				audio.play();
+			    y[i].style.transform = 'scale(1.4)';
+				setTimeout(function(){
+					var y = document.getElementsByClassName("newPickles");
+					var i;
+					for (i = 0; i < y.length; i++) {
+					    y[i].style.transform = 'scale(1.2)';
+					}
+				}, 200);
+			}
+		}
+		function addPickle(){
+			var parent = mui('#Pickless')[0];
+			var pickle = document.createElement('img');
+			pickle.src = "img/onePickle.png";
+			pickle.className = 'newPickles';
+			pickle.style.width = '5vw';
+			pickle.style.height = '5vw';
+			pickle.style.transition = '0.1s';
+			pickle.style.transform = 'scale(1.2)';
+			parent.appendChild(pickle);
+		}
+	</script>
+</body>
+</html>
